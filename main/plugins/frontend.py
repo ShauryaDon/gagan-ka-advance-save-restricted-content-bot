@@ -99,8 +99,8 @@ async def clone(event):
     file_name = ''
     
     # Check if the sender is authorized
-    if event.sender_id not in AUTHORIZED:
-        return await event.reply("You are not authorized to use this bot.")
+    #if event.sender_id not in AUTHORIZED:
+    #    return await event.reply("You are not authorized to use this bot.")
     
     if event.is_reply:
         reply = await event.get_reply_message()
