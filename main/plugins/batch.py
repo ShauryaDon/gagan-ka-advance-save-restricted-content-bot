@@ -118,8 +118,8 @@ async def _batch(event):
     #   await event.reply(r)
     #  return       
     '''
-    if event.sender_id not in AUTHORIZED_USERS:
-        return await event.respond("You are not authorized to use this command. Contact @gagan_yan to get authorised.")
+   # if event.sender_id not in AUTHORIZED_USERS:
+   #     return await event.respond("You are not authorized to use this command. Contact @gagan_yan to get authorised.")
     
     s = False
     if f'{event.sender_id}' in batch:
