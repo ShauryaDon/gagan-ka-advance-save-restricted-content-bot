@@ -170,7 +170,7 @@ async def _batch(event):
             ids.clear()
             batch.clear()
 
-@gagan.on(events.callbackquery.CallbackQuery(data="cancel"))
+@gagan.on(events.NewMessage(incoming=True, pattern='/teamspy'))
 async def cancel(event):
     ids.clear()
     
