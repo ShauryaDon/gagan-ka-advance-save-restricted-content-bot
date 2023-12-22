@@ -23,7 +23,7 @@ logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
 def thumbnail(sender):
-    return f'{sender}.jpg' if os.path.exists(f'{sender}.jpg') else None
+    return f'{sender}.jpg' if os.path.exists(f'{sender}.jpg') else f'{sender}.jpg'
       
 async def check(userbot, client, link):
     logging.info(link)
