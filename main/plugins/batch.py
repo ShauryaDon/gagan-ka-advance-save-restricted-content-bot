@@ -170,9 +170,11 @@ async def _batch(event):
             ids.clear()
             batch.clear()
 
-@Invix.on(events.callbackquery.CallbackQuery(data="cancel"))
+@gagan.on(events.callbackquery.CallbackQuery(data="cancel"))
 async def cancel(event):
     ids.clear()
+    batch.clear()
+
     
 async def run_batch(userbot, client, sender, countdown, link):
     for i in range(len(ids)):
