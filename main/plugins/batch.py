@@ -34,7 +34,7 @@ ids = []
 
 # File path for storing authorized user IDs
 AUTH_FILE_PATH = 'auth.json'
-OWNER_ID = 6876018655
+OWNER_ID = AUTH
 
 def load_authorized_users():
     """
