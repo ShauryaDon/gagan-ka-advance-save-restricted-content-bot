@@ -126,7 +126,7 @@ async def _batch(event):
         return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!")
     async with gagan.conversation(event.chat_id) as conv: 
         if not s:
-            await conv.send_message(f"⚠️⚠️ **Must Read** ⚠️⚠️\n{TEXTING}\nSend me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
+            await conv.send_message(f"Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
             try:
                 link = await conv.get_reply()
                 try:
@@ -137,7 +137,7 @@ async def _batch(event):
                 #print(e)
                 logger.info(e)
                 return await conv.send_message("Cannot wait more longer for your response!")
-            await conv.send_message(f"⚠️⚠️ **Must Read** ⚠️⚠️\n{TEXTING}\nSend me the number of files/range you want to save from the given message, as a reply to this message.", buttons=Button.force_reply())
+            await conv.send_message(f"Send me the number of files/range you want to save from the given message, as a reply to this message.", buttons=Button.force_reply())
             try:
                 _range = await conv.get_reply()
             except Exception as e:
