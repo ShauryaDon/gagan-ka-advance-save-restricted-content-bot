@@ -1,1 +1,1 @@
-dev_gagan: python3 -m main
+dev_gagan: python -m main
