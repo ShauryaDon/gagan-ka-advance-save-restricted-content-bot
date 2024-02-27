@@ -57,58 +57,58 @@ AUTHORIZED_USERS = load_authorized_users()
 
 # ... (your existing code)
 
-@gagan.on(events.NewMessage(incoming=True, pattern='/unauth'))
-async def _unauth(event):
-    """
-    Command to revoke authorization for users
-    """
+# @gagan.on(events.NewMessage(incoming=True, pattern='/unauth'))
+# async def _unauth(event):
+   # """
+  #  Command to revoke authorization for users
+  #  """
     # Check if the command is initiated by the owner
-    if event.sender_id == OWNER_ID:
+ #   if event.sender_id == OWNER_ID:
         # Parse the user ID from the command
-        try:
-            user_id = int(event.message.text.split(' ')[1])
-        except (ValueError, IndexError):
-            return await event.respond("Invalid /unauth command. Use /unauth USER_ID.")
+      #  try:
+    #        user_id = int(event.message.text.split(' ')[1])
+  #      except (ValueError, IndexError):
+          #  return await event.respond("Invalid /unauth command. Use /unauth USER_ID.")
 
         # Remove the user ID from the authorized set
-        if user_id in AUTHORIZED_USERS:
-            AUTHORIZED_USERS.remove(user_id)
-            save_authorized_users(AUTHORIZED_USERS)
-            await event.respond(f"Authorization revoked for user {user_id}.")
-        else:
-            await event.respond(f"User {user_id} is not authorized.")
-    else:
-        await event.respond("You are not authorized to use this command.")
+   #     if user_id in AUTHORIZED_USERS:
+        #    AUTHORIZED_USERS.remove(user_id)
+          #  save_authorized_users(AUTHORIZED_USERS)
+         #   await event.respond(f"Authorization revoked for user {user_id}.")
+   #     else:
+           # await event.respond(f"User {user_id} is not authorized.")
+  #  else:
+      #  await event.respond("You are not authorized to use this command.")
 
 # ... (your existing code)
 
 
-@gagan.on(events.NewMessage(incoming=True, pattern='/auth'))
-async def _auth(event):
-    """
-    Command to authorize users
-    """
+# @gagan.on(events.NewMessage(incoming=True, pattern='/auth'))
+# async def _auth(event):
+ #   """
+#    Command to authorize users
+#    """
     # Check if the command is initiated by the owner
-    if event.sender_id == OWNER_ID:
+#    if event.sender_id == OWNER_ID:
         # Parse the user ID from the command
-        try:
-            user_id = int(event.message.text.split(' ')[1])
-        except (ValueError, IndexError):
-            return await event.respond("Invalid /auth command. Use /auth USER_ID.")
-
+#        try:
+          #  user_id = int(event.message.text.split(' ')[1])
+     #   except (ValueError, IndexError):
+         #   return await event.respond("Invalid /auth command. Use /auth USER_ID.")
+#
         # Add the user ID to the authorized set
-        AUTHORIZED_USERS.add(user_id)
-        save_authorized_users(AUTHORIZED_USERS)
-        await event.respond(f"User {user_id} has been authorized.")
-    else:
-        await event.respond("You are not authorized to use this command.")
+   #     AUTHORIZED_USERS.add(user_id)
+      #  save_authorized_users(AUTHORIZED_USERS)
+#        await event.respond(f"User {user_id} has been authorized.")
+#    else:
+   #     await event.respond("You are not authorized to use this command.")
 
 # ... (Your existing code)
 
 
 @gagan.on(events.NewMessage(incoming=True, pattern='/batch'))
 async def _batch(event):
-    '''
+  #  '''
     #if not event.is_private:
     #    return
     # wtf is the use of fsub here if the command is meant for the owner? 
@@ -117,9 +117,9 @@ async def _batch(event):
     #if s == True:
     #   await event.reply(r)
     #  return       
-    '''
-    #if event.sender_id not in AUTHORIZED_USERS:
-       #return await event.respond("You are not authorized to use this command. Contact @gagan_yan to get authorised.")
+    # '''
+    # if event.sender_id not in AUTHORIZED_USERS:
+       # return await event.respond("You are not authorized to use this command. Contact @gagan_yan to get authorised.")
     
     s = False
     if f'{event.sender_id}' in batch:
