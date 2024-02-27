@@ -97,11 +97,11 @@ async def _auth(event):
 async def clone(event):
     logging.info(event)
     file_name = ''
-    
+    '''
     # Check if the sender is authorized
     #if event.sender_id not in AUTHORIZED:
     #    return await event.reply("You are not authorized to use this bot.")
-    
+    '''
     if event.is_reply:
         reply = await event.get_reply_message()
         if reply.text == message:
