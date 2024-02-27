@@ -54,7 +54,7 @@ def save_authorized_users(authorized_users):
         json.dump(list(authorized_users), file)
 
 AUTHORIZED_USERS = load_authorized_users()
-
+'''
 # ... (your existing code)
 
 # @gagan.on(events.NewMessage(incoming=True, pattern='/unauth'))
@@ -81,8 +81,9 @@ AUTHORIZED_USERS = load_authorized_users()
       #  await event.respond("You are not authorized to use this command.")
 
 # ... (your existing code)
+'''
 
-
+'''
 # @gagan.on(events.NewMessage(incoming=True, pattern='/auth'))
 # async def _auth(event):
  #   """
@@ -102,13 +103,12 @@ AUTHORIZED_USERS = load_authorized_users()
 #        await event.respond(f"User {user_id} has been authorized.")
 #    else:
    #     await event.respond("You are not authorized to use this command.")
-
 # ... (Your existing code)
-
+'''
 
 @gagan.on(events.NewMessage(incoming=True, pattern='/batch'))
 async def _batch(event):
-  #  '''
+  '''
     #if not event.is_private:
     #    return
     # wtf is the use of fsub here if the command is meant for the owner? 
@@ -117,10 +117,10 @@ async def _batch(event):
     #if s == True:
     #   await event.reply(r)
     #  return       
-    # '''
+    # 
     # if event.sender_id not in AUTHORIZED_USERS:
        # return await event.respond("You are not authorized to use this command. Contact @gagan_yan to get authorised.")
-    
+  '''
     s = False
     if f'{event.sender_id}' in batch:
         return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!")
